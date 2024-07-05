@@ -1,0 +1,8 @@
+1. A black box algorithm producing arbitrarily accurate series coefficients for start-up flow solutions
+   Algorithms written in commonly used and HPC specific language namely python and C++ respecively
+   An efficient verification and validation(V&V) tool for CFD data from instationary channel flows
+   Verification and validation(V&V) tool for experimental microchannel flows driven by flow rate changes
+
+2. Existing tittle works well also
+   Highly accurate solutions in the study of start-up channel flow with Slip
+   

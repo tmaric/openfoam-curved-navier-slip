@@ -1,0 +1,12 @@
+#!/bin/bash
+
+Ny=(5 10 20 40 80 160 320 640 1280)
+
+# mesh loop
+for c in "${Ny[@]}"
+do
+    caseName='Ny'"$c"
+    echo "Removing $caseName."
+
+    rm -r $caseName > /dev/null 2>&1
+done

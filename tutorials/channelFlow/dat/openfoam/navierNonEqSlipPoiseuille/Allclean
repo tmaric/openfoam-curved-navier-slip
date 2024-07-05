@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rm slipLengthLp* -r > /dev/null 2>&1

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+Lp=(0.01) #(0.0 0.00000001 0.0001 0.01 1.0 100)
+Lm=(0.01) #(0.0 0.00000001 0.0001 0.01 1.0 100)
+
+./Allclean
+
+for lp in "${Lp[@]}"
+do
+    for lm in "${Lm[@]}"
+    do
+        # define meshStudyName
+        meshStudyName="slipLengthLp${lp}_Lm${lm}"
+
+        # create mesh study
+        cp -r template "$meshStudyName"
+
+        # adapt data
+        sed -i 's/'"\!\@Lp\@\!"'/'"$lp"'/g' "$meshStudyName/template/0/U" 
+        sed -i 's/'"\!\@Lm\@\!"'/'"$lm"'/g' "$meshStudyName/template/0/U" 
+
+        # run case
+        echo "Computing case: $meshStudyName"
+        (cd $meshStudyName && ./Allrun &)
+    done
+done

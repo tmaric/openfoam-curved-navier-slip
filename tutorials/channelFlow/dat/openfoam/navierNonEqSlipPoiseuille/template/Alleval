@@ -1,0 +1,16 @@
+#!/bin/bash
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+Ny=(5 10 20 40 80 160 320 640 1280)
+
+# mesh loop
+for c in "${Ny[@]}"
+do
+    caseName='Ny'"$c"
+    echo "Running extractVelocity in $caseName."
+
+    (cd $caseName && rm evaluation/velocities*.dat > /dev/null 2>&1)
+    (cd $caseName && rm log.extractVelocity > /dev/null 2>&1)
+    (cd $caseName && ./Alleval)
+done
