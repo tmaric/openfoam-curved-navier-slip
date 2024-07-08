@@ -1,5 +1,5 @@
 // Author:
-//  Dirk Gruending
+//  Dirk Gruending and Suraj Raju
 
 #include "volFields.H"
 #include "addToRunTimeSelectionTable.H"
@@ -21,6 +21,13 @@
 #include "entry.H"
 #include "dictionary.H"
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+/*
+Usage: In 0/U file,
+       type            navierSlip;
+       value           uniform (0 0 0);
+       slipLength      uniform 1e-3;
+       wallVelocity    uniform (0 0 0);
+*/
 
 namespace Foam
 {

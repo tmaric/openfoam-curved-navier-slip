@@ -1,5 +1,5 @@
 // Author:
-//  Dirk Gruending
+//  Dirk Gruending and Suraj Raju
 
 #ifndef navierSlipFvPatchField_H
 #define navierSlipFvPatchField_H
@@ -89,6 +89,12 @@ public:
             virtual bool fixesValue() const
             {
                 return true;
+            }
+
+             //- Return false: this patch field is not altered by assignment
+            virtual bool assignable() const
+            {
+                return false;
             }
 
             const scalarField& slipLength() const
