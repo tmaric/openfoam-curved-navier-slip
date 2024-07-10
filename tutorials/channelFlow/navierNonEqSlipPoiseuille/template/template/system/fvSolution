@@ -50,8 +50,8 @@ PISO
     {
         p
         {
-	  //relTol 1e-3;
-            tolerance 1e-6;
+	  relTol 1e-3;
+          tolerance 1e-6;
         }
     }
 }
